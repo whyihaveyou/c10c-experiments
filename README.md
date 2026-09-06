@@ -95,3 +95,10 @@ closed `n=9,r=2` cover with 16 centers, yielding candidate `1.25`. These
 small-dimensional candidates are below the current `5/sqrt(8)` record, but the
 bitset implementation is suitable for extending the search and exporting
 explicit center certificates.
+
+## Reproduce the deterministic checks
+
+Create an environment with `python -m pip install -r requirements.txt`, then run
+`python run_verifiers.py`.  The command checks both the repository's 17 x 17
+certificate and the 8 x 8 Hamming-code certificate independently by exhaustive
+enumeration.  SDP screening scripts additionally require a working CVXPY solver.
