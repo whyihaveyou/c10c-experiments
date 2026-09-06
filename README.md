@@ -111,3 +111,8 @@ sign vectors for each candidate matrix. A 32-seed, 4-restart batch at $n=10$
 candidate exceeded the verified 8 x 8 Hamming certificate's discrepancy 5.
 This negative result helps calibrate the search before investing in SDP solver
 installation on the cluster.
+
+A second dependency-free batch on the supplied 64-core host used $n=11$, 16
+seeds, four restarts, and 1500 single-entry flips per restart. Every run's
+best exact discrepancy was 3, so this schedule did not approach the 8 x 8
+Hamming construction; the raw matrices remain on the host for follow-up.
