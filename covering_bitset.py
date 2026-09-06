@@ -1,14 +1,18 @@
 """Bitset-accelerated complement-closed covering-code search."""
 import random, math
+from itertools import combinations
 
 def search(n,r,restarts=100):
  N=1<<n; ALL=(1<<N)-1; full=(1<<n)-1
  balls=[]
  for c in range(N):
   m=0
-  for y in range(N):
-   if bin(c^y).count("1")<=r: m|=1<<y
-  balls.append(m | ((1<<N)-1 if False else 0))
+  for k in range(r+1):
+   for idx in combinations(range(n),k):
+    y=c
+    for j in idx: y ^= 1<<j
+    m |= 1<<y
+  balls.append(m)
  best=None
  for _ in range(restarts):
   uncovered=ALL; centers=[]
