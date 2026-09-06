@@ -102,3 +102,12 @@ Create an environment with `python -m pip install -r requirements.txt`, then run
 `python run_verifiers.py`.  The command checks both the repository's 17 x 17
 certificate and the 8 x 8 Hamming-code certificate independently by exhaustive
 enumeration.  SDP screening scripts additionally require a working CVXPY solver.
+
+## Remote exact search
+
+`remote_exact_search.py` uses only NumPy and exhaustively evaluates all $2^n$
+sign vectors for each candidate matrix. A 32-seed, 4-restart batch at $n=10$
+(found by the supplied 64-core host) repeatedly reached discrepancy 4; no
+candidate exceeded the verified 8 x 8 Hamming certificate's discrepancy 5.
+This negative result helps calibrate the search before investing in SDP solver
+installation on the cluster.
