@@ -123,3 +123,7 @@ The 32-seed $n=10$ batch was subsequently run correctly as Slurm array job
 `65861886` on `xahcnormal` (one task and 16 CPUs per array element; the login
 node only submitted and queried the job). All 32 tasks completed in 9--11 s and
 all reached exact discrepancy 4. No candidate improved the existing certificate.
+
+A Slurm array batch `65862318` then tested $n=12$ (32 seeds, 4 restarts, 3000
+flips). All 32 completed on `xahcnormal` in 12--14 s and reached discrepancy 4;
+no candidate improved the known certificates.
