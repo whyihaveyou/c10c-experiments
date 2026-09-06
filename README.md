@@ -127,3 +127,8 @@ all reached exact discrepancy 4. No candidate improved the existing certificate.
 A Slurm array batch `65862318` then tested $n=12$ (32 seeds, 4 restarts, 3000
 flips). All 32 completed on `xahcnormal` in 12--14 s and reached discrepancy 4;
 no candidate improved the known certificates.
+
+A Slurm array batch `65862627` tested $n=13$ (32 seeds, 4 restarts, 3000
+flips). Every task completed on `xahcnormal` in 26--27 s; all 32 reached exact
+discrepancy 3. This schedule produced no improvement over the $n=10$--$12$
+batches or the known Hamming certificate.
