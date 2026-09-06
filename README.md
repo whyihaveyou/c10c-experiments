@@ -86,3 +86,12 @@ For small dimensions it recovers the zero-slack cases `n=2,r=0` and `n=4,r=1`,
 and finds candidate normalized bounds `1.060660` at `n=5,r=1` and `1.154701`
 at `n=6,r=1`. The naive Python implementation becomes slow around `n=7`, so
 future work should use bitset acceleration or an ILP/SAT formulation.
+
+## Bitset covering search
+
+`covering_bitset.py` precomputes each Hamming ball as an integer bitset. It
+scales through `n=10` in a short run and finds, among others, a complement-
+closed `n=9,r=2` cover with 16 centers, yielding candidate `1.25`. These
+small-dimensional candidates are below the current `5/sqrt(8)` record, but the
+bitset implementation is suitable for extending the search and exporting
+explicit center certificates.
