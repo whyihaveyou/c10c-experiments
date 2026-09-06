@@ -22,4 +22,7 @@ def search(n,r,restarts=100):
 for n in range(2,13):
  for r in range(n//2+1):
   c=search(n,r,30)
-  if c: print(f'n={n} r={r} centers={len(c)} candidate={(n-2*r)/math.sqrt(max(n,len(c))):.9f}')
+  if c:
+   print(f'n={n} r={r} centers={len(c)} candidate={(n-2*r)/math.sqrt(max(n,len(c))):.9f}')
+   if (n-2*r)/math.sqrt(max(n,len(c))) > 1.7:
+    print('centers:', [format(x, f'0{n}b') for x in c])
