@@ -78,3 +78,11 @@ moves for this relaxation and are not promising as a standalone search action.
 `block2_anneal.py` flips contiguous 2 x 2 blocks under an annealing schedule.
 Three restarts reached `0.632455533` normalized SDP, below the entry-wise
 annealing record `0.679852164`; this move set is not competitive by itself.
+
+## Covering-code search
+
+`covering_search.py` implements a complement-closed greedy covering-code search.
+For small dimensions it recovers the zero-slack cases `n=2,r=0` and `n=4,r=1`,
+and finds candidate normalized bounds `1.060660` at `n=5,r=1` and `1.154701`
+at `n=6,r=1`. The naive Python implementation becomes slow around `n=7`, so
+future work should use bitset acceleration or an ILP/SAT formulation.
