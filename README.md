@@ -116,3 +116,10 @@ A second dependency-free batch on the supplied 64-core host used $n=11$, 16
 seeds, four restarts, and 1500 single-entry flips per restart. Every run's
 best exact discrepancy was 3, so this schedule did not approach the 8 x 8
 Hamming construction; the raw matrices remain on the host for follow-up.
+
+## Slurm batch record
+
+The 32-seed $n=10$ batch was subsequently run correctly as Slurm array job
+`65861886` on `xahcnormal` (one task and 16 CPUs per array element; the login
+node only submitted and queried the job). All 32 tasks completed in 9--11 s and
+all reached exact discrepancy 4. No candidate improved the existing certificate.
